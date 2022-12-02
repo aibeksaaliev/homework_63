@@ -9,12 +9,12 @@ const NavBar = () => {
     <div>
       <Navbar bg="dark" variant="dark">
         <Container className="d-flex justify-content-between">
-          <Navbar.Brand><NavLink to="/">My Blog</NavLink></Navbar.Brand>
+          <Navbar.Brand><NavLink className="text-white text-decoration-none" to="/posts">My Blog</NavLink></Navbar.Brand>
           <Nav>
-            <Nav.Link><NavLink to="/">Home</NavLink></Nav.Link>
-            <Nav.Link><NavLink to="/add">Add</NavLink></Nav.Link>
-            <Nav.Link><NavLink to="/about">About</NavLink></Nav.Link>
-            <Nav.Link><NavLink to="/contacts">Contacts</NavLink></Nav.Link>
+            <NavLink className="nav-link" to="/posts">Home</NavLink>
+            <NavLink className="nav-link" to="/new-post">Add</NavLink>
+            <NavLink className="nav-link" to="/about">About</NavLink>
+            <NavLink className="nav-link" to="/contacts">Contacts</NavLink>
           </Nav>
         </Container>
       </Navbar>
