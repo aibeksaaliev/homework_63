@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Route, Routes} from "react-router-dom";
-import {PostType} from "./types";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./containers/Home/Home";
 import Add from "./containers/Add/Add";
