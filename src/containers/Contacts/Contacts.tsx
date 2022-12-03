@@ -1,8 +1,8 @@
 import React, {FormEvent, useCallback, useEffect, useState} from 'react';
-import Container from "react-bootstrap/Container";
-import {AboutInfoType, ContactsInfoType} from "../../types";
-import axiosApi from "../../axiosApi";
+import {ContactsInfoType} from "../../types";
 import ReactTooltip from "react-tooltip";
+import axiosApi from "../../axiosApi";
+import Container from "react-bootstrap/Container";
 
 const Contacts = () => {
   const [contactsInfo, setContactsInfo] = useState<ContactsInfoType>({

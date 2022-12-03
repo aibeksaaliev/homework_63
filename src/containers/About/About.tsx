@@ -1,8 +1,8 @@
 import React, {FormEvent, useCallback, useEffect, useState} from 'react';
-import Container from "react-bootstrap/Container";
-import axiosApi from "../../axiosApi";
 import {AboutInfoType} from "../../types";
 import ReactTooltip from "react-tooltip";
+import axiosApi from "../../axiosApi";
+import Container from "react-bootstrap/Container";
 
 const About = () => {
   const [aboutInfo, setAboutInfo] = useState<AboutInfoType>({

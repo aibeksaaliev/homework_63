@@ -1,15 +1,9 @@
-import React, {useRef} from 'react';
-import {PostType} from "../../types";
-import PostForm from "../../components/PostForm/PostForm";
+import React from 'react';
 import {useParams} from "react-router-dom";
+import PostForm from "../../components/PostForm/PostForm";
 
-interface EditPostProps {
-  existingPost: PostType;
-}
-
-const EditPost: React.FC<EditPostProps> = ({existingPost}) => {
+const EditPost = () => {
   const {id} = useParams();
-
 
   return (
     <>

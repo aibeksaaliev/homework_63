@@ -1,17 +1,12 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import Container from "react-bootstrap/Container";
-import {Link, useNavigate, useParams} from "react-router-dom";
 import {PostType} from "../../types";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import axiosApi from "../../axiosApi";
-import ReactTooltip from "react-tooltip";
 import BlogSpinner from "../../components/BlogSpinner/BlogSpinner";
+import Container from "react-bootstrap/Container";
+import ReactTooltip from "react-tooltip";
 
-
-interface EditProps {
-  getSelectedPost: (post: PostType) => void;
-}
-
-const ReadMore: React.FC<EditProps> = ({getSelectedPost}) => {
+const ReadMore= () => {
   const {id} = useParams();
   const [post, setPost] = useState<PostType>({
     id: "",
@@ -72,7 +67,6 @@ const ReadMore: React.FC<EditProps> = ({getSelectedPost}) => {
             </button>
             <Link
               to={"/posts/" + id + "/edit"}
-              onClick={() => getSelectedPost(post)}
               className="btn btn-dark rounded-circle"
               style={{padding: "6px 10px"}}
               data-tip data-for="edit"

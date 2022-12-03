@@ -1,10 +1,9 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import Container from "react-bootstrap/Container";
 import {PostsType, PostType} from "../../types";
 import axiosApi from "../../axiosApi";
 import PostCard from "../../components/PostCard/PostCard";
-import {Spinner} from "react-bootstrap";
 import BlogSpinner from "../../components/BlogSpinner/BlogSpinner";
+import Container from "react-bootstrap/Container";
 
 const Home = () => {
   const [posts, setPosts] = useState<PostType[]>([]);

@@ -1,10 +1,10 @@
 import React, {FormEvent, useCallback, useEffect, useState} from 'react';
-import Container from "react-bootstrap/Container";
 import {PostType} from "../../types";
 import axiosApi from "../../axiosApi";
+import Container from "react-bootstrap/Container";
 import ReactTooltip from "react-tooltip";
-import BlogSpinner from "../BlogSpinner/BlogSpinner";
 import {useNavigate} from "react-router-dom";
+import BlogSpinner from "../BlogSpinner/BlogSpinner";
 
 interface PostFormProps {
   id?: string;
