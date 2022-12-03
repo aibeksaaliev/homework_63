@@ -2,6 +2,7 @@ import React, {FormEvent, useCallback, useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import axiosApi from "../../axiosApi";
 import {AboutInfoType} from "../../types";
+import ReactTooltip from "react-tooltip";
 
 const About = () => {
   const [aboutInfo, setAboutInfo] = useState<AboutInfoType>({
@@ -44,19 +45,33 @@ const About = () => {
 
 
   return (
-    <Container>
+    <Container className="text-center pt-4 pb-4 position-relative">
       <h4>About</h4>
       <h5>History</h5>
       <p>{aboutInfo?.history}</p>
       <h5>Mission</h5>
       <p>{aboutInfo?.mission}</p>
-      <span>Established:{aboutInfo?.established}</span>
-      <span>How many posts i wrote:{aboutInfo?.posts}</span>
-      <button className="btn btn-dark" onClick={() => setEditShow(true)}>Edit</button>
+      <span className="d-block">Established: {aboutInfo?.established}.</span>
+      <span className="d-block">How many posts i wrote: {aboutInfo?.posts}.</span>
+      <button
+        className="btn btn-dark d-block position-absolute top-0 end-0 mt-4 rounded-circle"
+        onClick={() => setEditShow(true)}
+        style={{padding: "6px 10px"}}
+        data-tip="" data-for="edit_about"
+      >
+        <i className="bi bi-three-dots-vertical"></i>
+      </button>
+      <ReactTooltip
+        id="edit_about"
+        place="left"
+        effect="solid"
+      >
+        Edit page
+      </ReactTooltip>
       {editShow ? (
-        <form onSubmit={onFormSubmit}>
+        <form onSubmit={onFormSubmit} className="mt-3">
           <div className="form-group">
-            <label htmlFor="exampleFormControlInput1">History</label>
+            <label htmlFor="exampleFormControlInput1">Edit history info</label>
             <textarea
               className="form-control bg-transparent text-dark"
               required
@@ -66,7 +81,7 @@ const About = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="exampleFormControlInput1">Mission</label>
+            <label htmlFor="exampleFormControlInput1">Edit mission info</label>
             <textarea
               className="form-control bg-transparent text-dark"
               required
@@ -76,7 +91,7 @@ const About = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="exampleFormControlInput1">History</label>
+            <label htmlFor="exampleFormControlInput1">Edit established info</label>
             <input
               type="text"
               className="form-control bg-transparent text-dark"
@@ -87,7 +102,7 @@ const About = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="exampleFormControlInput1">History</label>
+            <label htmlFor="exampleFormControlInput1">Edit posts info</label>
             <input
               type="text"
               className="form-control bg-transparent text-dark"
@@ -98,7 +113,7 @@ const About = () => {
             />
           </div>
           <div className="form-group">
-            <button type="submit" className="btn btn-dark">Save</button>
+            <button type="submit" className="btn btn-dark mt-2">Save</button>
           </div>
         </form>
       ) : null}
